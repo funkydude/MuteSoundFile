@@ -1,6 +1,7 @@
 
 local name, mod = ...
 local L = mod.L
+local MuteSoundFile = MuteSoundFile
 
 local frame = CreateFrame("Frame", "MuteSoundFileMod")
 do
@@ -12,11 +13,12 @@ do
 	SlashCmdList[name] = openOpts
 	SLASH_MuteSoundFile1 = "/msf"
 	SLASH_MuteSoundFile2 = "/mutesoundfile"
-	frame:RegisterEvent("PLAYER_LOGIN")
+	frame:RegisterEvent("ADDON_LOADED")
 end
 
-frame:SetScript("OnEvent", function(f)
-	f:UnregisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", function(f, event, addon)
+	if addon ~= name then return end
+	f:UnregisterEvent(event)
 
 	if type(MuteSoundFileDB) ~= "table" then
 		MuteSoundFileDB = {}
