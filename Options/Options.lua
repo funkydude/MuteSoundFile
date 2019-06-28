@@ -11,7 +11,7 @@ do
 	L = mod.L
 end
 
-local addSoundById, removeSoundByIdOrName, addSoundNickname
+local addSoundById, removeSoundByIdOrName, addSoundNickname = nil, nil, nil
 
 local options = function()
 	local acOptions = {
@@ -63,6 +63,8 @@ local options = function()
 									else
 										msf.db.profile.soundList[name] = id
 										MuteSoundFile(id)
+										addSoundById = nil
+										addSoundNickname = nil
 									end
 								else
 									if msf.db.profile.soundList[id] then
@@ -70,6 +72,8 @@ local options = function()
 									else
 										msf.db.profile.soundList[id] = id
 										MuteSoundFile(id)
+										addSoundById = nil
+										addSoundNickname = nil
 									end
 								end
 							else
@@ -103,6 +107,7 @@ local options = function()
 								if id > 0 and msf.db.profile.soundList[id] then
 									UnmuteSoundFile(id)
 									msf.db.profile.soundList[id] = nil
+									removeSoundByIdOrName = nil
 								else
 									print"invalid sound id"
 								end
@@ -112,6 +117,7 @@ local options = function()
 									if msf.db.profile.soundList[name] then
 										UnmuteSoundFile(msf.db.profile.soundList[name])
 										msf.db.profile.soundList[name] = nil
+										removeSoundByIdOrName = nil
 									else
 										print"invalid sound name"
 									end
