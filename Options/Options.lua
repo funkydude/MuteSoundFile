@@ -3,14 +3,15 @@ local acr = LibStub("AceConfigRegistry-3.0")
 local acd = LibStub("AceConfigDialog-3.0")
 local adbo = LibStub("AceDBOptions-3.0")
 
-local msf = MuteSoundFileMod
+local msf = MuteSoundFileFrame
+local MuteSoundFile, UnmuteSoundFile = msf.MuteSoundFile, msf.UnmuteSoundFile
 local L
 do
 	local _, mod = ...
 	L = mod.L
 end
 
-local soundId, removeSound, soundName
+local addSoundById, removeSoundByIdOrName, addSoundNickname
 
 local options = function()
 	local acOptions = {
@@ -26,26 +27,26 @@ local options = function()
 						name = "Add Sounds",
 						order = 1,
 					},
-					soundId = {
+					addSoundById = {
 						type = "input",
 						name = "Sound ID",
 						order = 2,
 						get = function()
-							return soundId
+							return addSoundById
 						end,
 						set = function(_, value)
-							soundId = value
+							addSoundById = value
 						end,
 					},
-					soundName = {
+					addSoundNickname = {
 						type = "input",
 						name = "Nickname (Optional)",
 						order = 3,
 						get = function()
-							return soundName
+							return addSoundNickname
 						end,
 						set = function(_, value)
-							soundName = value
+							addSoundNickname = value
 						end,
 					},
 					add = {
@@ -54,9 +55,9 @@ local options = function()
 						--desc = L.resetAllCustomSound,
 						width = "full",
 						func = function()
-							local id = tonumber(soundId)
+							local id = tonumber(addSoundById)
 							if id and id > 0 then
-								local name = tostring(soundName)
+								local name = tostring(addSoundNickname)
 								if name and name ~= "" and not name:find("^ *$") then
 									msf.db.profile.soundList[name] = id
 									MuteSoundFile(id)
@@ -70,20 +71,20 @@ local options = function()
 						end,
 						order = 4,
 					},
-					removeSoundHeader = {
+					removeSoundByIdOrNameHeader = {
 						type = "header",
 						name = "Remove Sounds",
 						order = 5,
 					},
-					removeSound = {
+					removeSoundByIdOrName = {
 						type = "input",
 						name = "Sound ID or Name",
 						order = 6,
 						get = function()
-							return removeSound
+							return removeSoundByIdOrName
 						end,
 						set = function(_, value)
-							removeSound = value
+							removeSoundByIdOrName = value
 						end,
 					},
 					remove = {
@@ -92,7 +93,7 @@ local options = function()
 						--desc = L.resetAllCustomSound,
 						--width = "full",
 						func = function()
-							local id = tonumber(removeSound)
+							local id = tonumber(removeSoundByIdOrName)
 							if id then
 								if id > 0 and msf.db.profile.soundList[id] then
 									UnmuteSoundFile(id)
@@ -101,7 +102,7 @@ local options = function()
 									print"invalid sound id"
 								end
 							else
-								local name = tostring(removeSound)
+								local name = tostring(removeSoundByIdOrName)
 								if name and name ~= "" and not name:find("^ *$") then
 									if msf.db.profile.soundList[name] then
 										UnmuteSoundFile(msf.db.profile.soundList[name])

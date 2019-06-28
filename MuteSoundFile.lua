@@ -1,9 +1,10 @@
 
 local name, mod = ...
 local L = mod.L
-local MuteSoundFile = MuteSoundFile
+local MuteSoundFile, UnmuteSoundFile = MuteSoundFile, UnmuteSoundFile
 
-local frame = CreateFrame("Frame", "MuteSoundFileMod")
+local frame = CreateFrame("Frame", "MuteSoundFileFrame")
+frame.MuteSoundFile, frame.UnmuteSoundFile = MuteSoundFile, UnmuteSoundFile
 do
 	local function openOpts()
 		EnableAddOn("MuteSoundFile_Options") -- Make sure it wasn't left disabled for whatever reason
