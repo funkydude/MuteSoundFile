@@ -6,7 +6,7 @@ end
 local L = mod.L
 
 L.addSounds = "Add Sounds"
-L.soundId = "Sound ID"
+L.soundId = "Sound ID (number)"
 L.nickname = "Nickname (optional)"
 L.muteSound = "Mute this sound"
 L.removeSounds = "Remove Sounds"
