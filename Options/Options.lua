@@ -151,6 +151,7 @@ local options = function()
 							end
 							return tbl
 						end,
+						width = "full",
 					},
 					findSoundFileDesc = {
 						type = "description",
