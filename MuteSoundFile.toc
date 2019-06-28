@@ -1,0 +1,27 @@
+## Interface: 80200
+## Version: @project-version@
+## Title: MuteSoundFile
+## Author: Funkydude
+## Notes: Mute specific sound files.
+## Notes-esES: Mute specific sound files.
+## Notes-esMX: Mute specific sound files.
+## Notes-zhCN: Mute specific sound files.
+## Notes-zhTW: Mute specific sound files.
+## Notes-deDE: Mute specific sound files.
+## Notes-frFR: Mute specific sound files.
+## Notes-itIT: Mute specific sound files.
+## Notes-koKR: Mute specific sound files.
+## Notes-ptBR: Mute specific sound files.
+## Notes-ruRU: Mute specific sound files.
+## SavedVariables: MuteSoundFileDB
+
+## X-Category: Audio
+## X-Website: https://github.com/funkydude/MuteSoundFile
+## X-License: All Rights Reserved: You are free to fork and modify on GitHub, please ask us about anything else.
+## X-Curse-Project-ID: 325542
+## OptionalDeps: Ace3
+## X-Embeds: Ace3
+
+embeds.xml
+modules.xml
+

@@ -1,0 +1,16 @@
+package-as: MuteSoundFile
+wowi-archive-previous: no
+
+externals:
+    Options/Libs/AceGUI-3.0: https://repos.wowace.com/wow/ace3/trunk/AceGUI-3.0
+    Options/Libs/AceConfigDialog-3.0: https://repos.wowace.com/wow/ace3/trunk/AceConfig-3.0/AceConfigDialog-3.0
+    Options/Libs/AceConfigRegistry-3.0: https://repos.wowace.com/wow/ace3/trunk/AceConfig-3.0/AceConfigRegistry-3.0
+    Options/Libs/AceDBOptions-3.0: https://repos.wowace.com/wow/ace3/trunk/AceDBOptions-3.0
+    Libs/AceDB-3.0: https://repos.wowace.com/wow/ace3/trunk/AceDB-3.0
+
+move-folders:
+    MuteSoundFile/Options: MuteSoundFile_Options
+
+ignore:
+  - .travis.yml
+  - README.md
