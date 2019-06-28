@@ -33,7 +33,7 @@ frame:SetScript("OnEvent", function(f, event, addon)
 	}
 	f.db = LibStub("AceDB-3.0"):New("MuteSoundFileDB", defaults, true)
 
-	for k,v in next, f.db.profile.soundList do
-		MuteSoundFile(v)
+	for _, soundID in next, f.db.profile.soundList do
+		MuteSoundFile(soundID)
 	end
 end)
