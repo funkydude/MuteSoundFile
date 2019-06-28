@@ -2,17 +2,17 @@
 ## Version: @project-version@
 ## Title: MuteSoundFile
 ## Author: Funkydude
-## Notes: Mute specific sound files.
-## Notes-esES: Mute specific sound files.
-## Notes-esMX: Mute specific sound files.
-## Notes-zhCN: Mute specific sound files.
-## Notes-zhTW: Mute specific sound files.
-## Notes-deDE: Mute specific sound files.
-## Notes-frFR: Mute specific sound files.
-## Notes-itIT: Mute specific sound files.
-## Notes-koKR: Mute specific sound files.
-## Notes-ptBR: Mute specific sound files.
-## Notes-ruRU: Mute specific sound files.
+## Notes: Mute sound files in World of Warcraft.
+## Notes-esES: Mute sound files in World of Warcraft.
+## Notes-esMX: Mute sound files in World of Warcraft.
+## Notes-zhCN: Mute sound files in World of Warcraft.
+## Notes-zhTW: Mute sound files in World of Warcraft.
+## Notes-deDE: Mute sound files in World of Warcraft.
+## Notes-frFR: Mute sound files in World of Warcraft.
+## Notes-itIT: Mute sound files in World of Warcraft.
+## Notes-koKR: Mute sound files in World of Warcraft.
+## Notes-ptBR: Mute sound files in World of Warcraft.
+## Notes-ruRU: Mute sound files in World of Warcraft.
 ## SavedVariables: MuteSoundFileDB
 
 ## X-Category: Audio
