@@ -58,11 +58,19 @@ local options = function()
 							if id and id > 0 then
 								local name = tostring(addSoundNickname)
 								if name and name ~= "" and not name:find("^ *$") then
-									msf.db.profile.soundList[name] = id
-									MuteSoundFile(id)
+									if msf.db.profile.soundList[name] then
+										print"that name already exists"
+									else
+										msf.db.profile.soundList[name] = id
+										MuteSoundFile(id)
+									end
 								else
-									msf.db.profile.soundList[id] = id
-									MuteSoundFile(id)
+									if msf.db.profile.soundList[id] then
+										print"that sound is already muted"
+									else
+										msf.db.profile.soundList[id] = id
+										MuteSoundFile(id)
+									end
 								end
 							else
 								print("invalid id")
