@@ -141,4 +141,4 @@ local options = function()
 end
 
 acr:RegisterOptionsTable("MuteSoundFile", options, true)
-acd:SetDefaultSize("MuteSoundFile", 420, 590)
+acd:SetDefaultSize("MuteSoundFile", 420, 470)
