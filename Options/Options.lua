@@ -145,6 +145,12 @@ local options = function()
 							return tbl
 						end,
 					},
+					findSoundFileDesc = {
+						type = "description",
+						name = L.soundDesc,
+						order = 10,
+						width = "full",
+					},
 				},
 			},
 			profiles = adbo:GetOptionsTable(msf.db),
