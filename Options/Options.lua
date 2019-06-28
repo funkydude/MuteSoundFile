@@ -24,12 +24,12 @@ local options = function()
 				args = {
 					addSoundHeader = {
 						type = "header",
-						name = "Add Sounds",
+						name = L.addSounds,
 						order = 1,
 					},
 					addSoundById = {
 						type = "input",
-						name = "Sound ID",
+						name = L.soundId,
 						order = 2,
 						get = function()
 							return addSoundById
@@ -40,7 +40,7 @@ local options = function()
 					},
 					addSoundNickname = {
 						type = "input",
-						name = "Nickname (Optional)",
+						name = L.nickname,
 						order = 3,
 						get = function()
 							return addSoundNickname
@@ -51,7 +51,7 @@ local options = function()
 					},
 					addButton = {
 						type = "execute",
-						name = "Add Sound",
+						name = L.muteSound,
 						width = "full",
 						func = function()
 							local id = tonumber(addSoundById)
@@ -72,12 +72,12 @@ local options = function()
 					},
 					removeSoundByIdOrNameHeader = {
 						type = "header",
-						name = "Remove Sounds",
+						name = L.removeSounds,
 						order = 5,
 					},
 					removeSoundByIdOrName = {
 						type = "input",
-						name = "Sound ID or Name",
+						name = L.soundIdOrName,
 						order = 6,
 						get = function()
 							return removeSoundByIdOrName
@@ -88,7 +88,7 @@ local options = function()
 					},
 					removeButton = {
 						type = "execute",
-						name = "Remove",
+						name = L.removeSound,
 						func = function()
 							local id = tonumber(removeSoundByIdOrName)
 							if id then
@@ -116,12 +116,12 @@ local options = function()
 					},
 					previewSoundHeader = {
 						type = "header",
-						name = "Muted Sounds List",
+						name = L.soundsList,
 						order = 8,
 					},
 					soundsDropdown = {
 						type = "select",
-						name = "Muted Sounds",
+						name = L.mutedSounds,
 						order = 9,
 						values = function()
 							local tbl = {}
