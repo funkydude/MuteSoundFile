@@ -27,7 +27,7 @@ local options = function()
 						name = L.addSounds,
 						order = 1,
 					},
-					addSoundById = {
+					inputSoundById = {
 						type = "input",
 						name = L.soundId,
 						order = 2,
@@ -38,7 +38,7 @@ local options = function()
 							addSoundById = value
 						end,
 					},
-					addSoundNickname = {
+					inputSoundNickname = {
 						type = "input",
 						name = L.nickname,
 						order = 3,
@@ -57,9 +57,9 @@ local options = function()
 							local id = tonumber(addSoundById)
 							if id and id > 0 then
 								local name = tostring(addSoundNickname)
-								if name and name ~= "" and not name:find("^ *$") then
+								if addSoundNickname and name and name ~= "" and not name:find("^ *$") then
 									if msf.db.profile.soundList[name] then
-										print"that name already exists"
+										print(L.nicknameExists)
 									else
 										msf.db.profile.soundList[name] = id
 										MuteSoundFile(id)
@@ -68,7 +68,7 @@ local options = function()
 									end
 								else
 									if msf.db.profile.soundList[id] then
-										print"that sound is already muted"
+										print(L.soundIdExists)
 									else
 										msf.db.profile.soundList[id] = id
 										MuteSoundFile(id)
@@ -77,7 +77,7 @@ local options = function()
 									end
 								end
 							else
-								print("invalid id")
+								print(L.invalidSound)
 							end
 						end,
 						order = 4,
@@ -109,7 +109,7 @@ local options = function()
 									msf.db.profile.soundList[id] = nil
 									removeSoundByIdOrName = nil
 								else
-									print"invalid sound id"
+									print(L.noSuchID)
 								end
 							else
 								local name = tostring(removeSoundByIdOrName)
@@ -119,10 +119,10 @@ local options = function()
 										msf.db.profile.soundList[name] = nil
 										removeSoundByIdOrName = nil
 									else
-										print"invalid sound name"
+										print(L.noSuchNickname)
 									end
 								else
-									print"invalid sound name"
+									print(L.noSuchNickname)
 								end
 							end
 						end,
