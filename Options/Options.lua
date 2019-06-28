@@ -59,7 +59,7 @@ local options = function()
 								local name = tostring(addSoundNickname)
 								if addSoundNickname and name and name ~= "" and not name:find("^ *$") then
 									if msf.db.profile.soundList[name] then
-										print(L.nicknameExists)
+										print(L.nicknameExists:format(name))
 									else
 										msf.db.profile.soundList[name] = id
 										MuteSoundFile(id)
@@ -68,7 +68,7 @@ local options = function()
 									end
 								else
 									if msf.db.profile.soundList[id] then
-										print(L.soundIdExists)
+										print(L.soundIdExists:format(id))
 									else
 										msf.db.profile.soundList[id] = id
 										MuteSoundFile(id)
@@ -77,7 +77,7 @@ local options = function()
 									end
 								end
 							else
-								print(L.invalidSound)
+								print(L.invalidSound:format(addSoundById or ""))
 							end
 						end,
 						order = 4,
@@ -109,20 +109,27 @@ local options = function()
 									msf.db.profile.soundList[id] = nil
 									removeSoundByIdOrName = nil
 								else
-									print(L.noSuchID)
+									local numAsNick = tostring(id) -- We store nicknames as strings but the user may be using a number as a nickname e.g. -2
+									if msf.db.profile.soundList[numAsNick] then
+										UnmuteSoundFile(msf.db.profile.soundList[numAsNick])
+										msf.db.profile.soundList[numAsNick] = nil
+										removeSoundByIdOrName = nil
+									else
+										print(L.noSuchID:format(id))
+									end
 								end
 							else
 								local name = tostring(removeSoundByIdOrName)
-								if name and name ~= "" and not name:find("^ *$") then
+								if removeSoundByIdOrName and name and name ~= "" and not name:find("^ *$") then
 									if msf.db.profile.soundList[name] then
 										UnmuteSoundFile(msf.db.profile.soundList[name])
 										msf.db.profile.soundList[name] = nil
 										removeSoundByIdOrName = nil
 									else
-										print(L.noSuchNickname)
+										print(L.noSuchNickname:format(name))
 									end
 								else
-									print(L.noSuchNickname)
+									print(L.noSuchNickname:format(removeSoundByIdOrName or ""))
 								end
 							end
 						end,
