@@ -49,10 +49,9 @@ local options = function()
 							addSoundNickname = value
 						end,
 					},
-					add = {
+					addButton = {
 						type = "execute",
 						name = "Add Sound",
-						--desc = L.resetAllCustomSound,
 						width = "full",
 						func = function()
 							local id = tonumber(addSoundById)
@@ -66,7 +65,7 @@ local options = function()
 									MuteSoundFile(id)
 								end
 							else
-								--invalid id
+								print("invalid id")
 							end
 						end,
 						order = 4,
@@ -87,11 +86,9 @@ local options = function()
 							removeSoundByIdOrName = value
 						end,
 					},
-					remove = {
+					removeButton = {
 						type = "execute",
 						name = "Remove",
-						--desc = L.resetAllCustomSound,
-						--width = "full",
 						func = function()
 							local id = tonumber(removeSoundByIdOrName)
 							if id then
@@ -122,7 +119,7 @@ local options = function()
 						name = "Muted Sounds List",
 						order = 8,
 					},
-					sounds = {
+					soundsDropdown = {
 						type = "select",
 						name = "Muted Sounds",
 						order = 9,
@@ -133,7 +130,6 @@ local options = function()
 							end
 							return tbl
 						end,
-						--width = 6,
 					},
 				},
 			},
