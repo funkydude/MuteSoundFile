@@ -191,6 +191,7 @@ local options = function()
 						type = "select",
 						name = L.mutedSounds,
 						order = 10,
+						itemControl = "MuteSoundFileSound",
 						values = function()
 							local tbl = {}
 							for k in next, msf.db.profile.soundList do
