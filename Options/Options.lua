@@ -125,7 +125,7 @@ local options = function()
 						name = L.removeSounds,
 						order = 6,
 					},
-					removeSoundByIdOrName = {
+					removeSoundByIdOrNameInput = {
 						type = "input",
 						name = L.soundIdOrName,
 						dialogControl = "MuteSoundFileEditBox",
@@ -192,6 +192,14 @@ local options = function()
 							return tbl
 						end,
 						width = "full",
+						set = function(_, tableEntry)
+							local tbl = {}
+							for k in next, msf.db.profile.soundList do
+								tbl[#tbl+1] = k
+							end
+							table.sort(tbl)
+							removeSoundByIdOrName = tostring(tbl[tableEntry]) -- Need to tostring numbers to get the editbox to update
+						end,
 					},
 					findSoundFileDesc = {
 						type = "description",
