@@ -43,4 +43,8 @@ frame:SetScript("OnEvent", function(f, event, addon)
 			MuteSoundFile(id)
 		end
 	end
+
+	C_Timer.After(20, function()
+		print("|cFF33FF99MuteSoundFile:|r Preset functionality added. Suggest new presets at https://git.io/fj6Gq")
+	end)
 end)
