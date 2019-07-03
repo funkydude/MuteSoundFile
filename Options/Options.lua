@@ -13,6 +13,14 @@ do
 end
 
 local lastPlayedSound = 0
+local function sortTbl(x,y)
+	local num1, num2 = tonumber(x), tonumber(y)
+	if num1 and num2 then -- numeric comparison, either two numbers or numeric strings
+		return num1 < num2
+	else -- compare everything else tostring'ed
+		return tostring(x) < tostring(y)
+	end
+end
 
 local options = function()
 	local acOptions = {
@@ -188,7 +196,7 @@ local options = function()
 							for k in next, msf.db.profile.soundList do
 								tbl[#tbl+1] = k
 							end
-							table.sort(tbl)
+							table.sort(tbl, sortTbl)
 							return tbl
 						end,
 						width = "full",
@@ -197,7 +205,7 @@ local options = function()
 							for k in next, msf.db.profile.soundList do
 								tbl[#tbl+1] = k
 							end
-							table.sort(tbl)
+							table.sort(tbl, sortTbl)
 							mod[L.soundIdOrName] = tostring(tbl[tableEntry]) -- Need to tostring numbers to get the editbox to update
 						end,
 					},
