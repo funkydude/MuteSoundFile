@@ -239,13 +239,69 @@ local options = function()
 				},
 			},
 			presets = {
-				name = "Presets",
+				name = L.presets,
 				order = 2, type = "group",
 				args = {
-					presetHeader = {
-						type = "header",
-						name = "Coming soon",
+					description = {
+						type = "description",
+						name = L.presetDesc,
 						order = 1,
+						width = "full",
+						fontSize = "medium",
+					},
+					presetsDropdown = {
+						type = "select",
+						name = L.presetList,
+						order = 2,
+						values = function()
+							local presets = mod.presets
+							local tbl = {}
+							for k in next, presets do
+								local text = L[k] or "MISSING LOCALE FOR "..k
+								if msf.db.profile.mutedPresets[k] then
+									text = "|T136814:0|t ".. text
+								else
+									text = "|T136813:0|t ".. text
+								end
+								tbl[#tbl+1] = text
+							end
+							table.sort(tbl, sortTbl)
+							return tbl
+						end,
+						width = "full",
+						set = function(_, tableEntry)
+							local presets = mod.presets
+							local tbl, sortedTbl = {}, {}
+							for k in next, presets do
+								local text = L[k] or "MISSING LOCALE FOR "..k
+								if msf.db.profile.mutedPresets[k] then
+									text = "|T136814:0|t ".. text
+								else
+									text = "|T136813:0|t ".. text
+								end
+								tbl[text] = k
+								sortedTbl[#sortedTbl+1] = text
+							end
+							table.sort(sortedTbl, sortTbl)
+
+							local localizedName = sortedTbl[tableEntry]
+							local selectedPreset = tbl[localizedName]
+							if selectedPreset and presets[selectedPreset] then
+								if msf.db.profile.mutedPresets[selectedPreset] then
+									msf.db.profile.mutedPresets[selectedPreset] = nil
+									for i = 1, #presets[selectedPreset] do
+										local id = presets[selectedPreset][i]
+										UnmuteSoundFile(id)
+									end
+								else
+									msf.db.profile.mutedPresets[selectedPreset] = presets[selectedPreset]
+									for i = 1, #presets[selectedPreset] do
+										local id = presets[selectedPreset][i]
+										MuteSoundFile(id)
+									end
+								end
+							end
+						end,
 					},
 				},
 			},

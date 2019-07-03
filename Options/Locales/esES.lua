@@ -20,3 +20,8 @@ local L = mod.L
 --L.noSuchID = "|cFF33FF99MuteSoundFile:|r A sound with ID '%d' isn't in your mute list."
 --L.failedToAdd = "|cFF33FF99MuteSoundFile:|r There is no sound with id '%d' or you have sound disabled."
 --L.soundDesc = "\n\n\n\nSound file IDs can be acquired by searching this website:\nwow.tools"
+--L.presetDesc = "To speed up muting sounds, you can select them from the preset list. Presets can be one or multiple sounds. When you mute a specific preset a |T136814:0|t means muted and |T136813:0|t means not muted."
+--L.presets = "Presets"
+--L.presetList = "Preset List"
+
+--L.lfgping = "LFG invitation pending ping"

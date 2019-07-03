@@ -3,6 +3,7 @@
 <Script file="MuteSoundFile.lua"/>
 <!--@debug@-->
 <Include file="Options\locales.xml"/>
+<Script file="Options\Presets.lua"/>
 <Script file="Options\Options.lua"/>
 <!--@end-debug@-->
 </Ui>

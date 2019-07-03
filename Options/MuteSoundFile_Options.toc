@@ -24,5 +24,5 @@
 
 embeds.xml
 locales.xml
+Presets.lua
 Options.lua
-
