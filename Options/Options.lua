@@ -12,6 +12,7 @@ do
 end
 
 local addSoundById, removeSoundByIdOrName, addSoundNickname = nil, nil, nil
+local lastPlayedSound = 0
 
 local options = function()
 	local acOptions = {
@@ -51,10 +52,37 @@ local options = function()
 							addSoundNickname = value
 						end,
 					},
+					previewSoundButton = {
+						type = "execute",
+						name = L.previewSound,
+						func = function()
+							local id = tonumber(addSoundById)
+							if id and id > 0 then
+								local name = tostring(addSoundNickname)
+								if addSoundNickname and name and name ~= "" and not name:find("^ *$") then
+									if msf.db.profile.soundList[name] then
+										print(L.nicknameExists:format(name))
+									else
+										local _, id = PlaySoundFile(id, "Master")
+										if id then lastPlayedSound = id end
+									end
+								else
+									if msf.db.profile.soundList[id] then
+										print(L.soundIdExists:format(id))
+									else
+										local _, id = PlaySoundFile(id, "Master")
+										if id then lastPlayedSound = id end
+									end
+								end
+							else
+								print(L.invalidSound:format(addSoundById or ""))
+							end
+						end,
+						order = 4,
+					},
 					addButton = {
 						type = "execute",
 						name = L.muteSound,
-						width = "full",
 						func = function()
 							local id = tonumber(addSoundById)
 							if id and id > 0 then
@@ -65,6 +93,10 @@ local options = function()
 									else
 										msf.db.profile.soundList[name] = id
 										MuteSoundFile(id)
+										if lastPlayedSound > 0 then
+											StopSound(lastPlayedSound)
+											lastPlayedSound = 0
+										end
 										addSoundById = nil
 										addSoundNickname = nil
 									end
@@ -74,6 +106,10 @@ local options = function()
 									else
 										msf.db.profile.soundList[id] = id
 										MuteSoundFile(id)
+										if lastPlayedSound > 0 then
+											StopSound(lastPlayedSound)
+											lastPlayedSound = 0
+										end
 										addSoundById = nil
 										addSoundNickname = nil
 									end
@@ -82,18 +118,18 @@ local options = function()
 								print(L.invalidSound:format(addSoundById or ""))
 							end
 						end,
-						order = 4,
+						order = 5,
 					},
 					removeSoundByIdOrNameHeader = {
 						type = "header",
 						name = L.removeSounds,
-						order = 5,
+						order = 6,
 					},
 					removeSoundByIdOrName = {
 						type = "input",
 						name = L.soundIdOrName,
 						dialogControl = "MuteSoundFileEditBox",
-						order = 6,
+						order = 7,
 						get = function()
 							return removeSoundByIdOrName
 						end,
@@ -136,17 +172,17 @@ local options = function()
 								end
 							end
 						end,
-						order = 7,
+						order = 8,
 					},
 					previewSoundHeader = {
 						type = "header",
 						name = L.soundsList,
-						order = 8,
+						order = 9,
 					},
 					soundsDropdown = {
 						type = "select",
 						name = L.mutedSounds,
-						order = 9,
+						order = 10,
 						values = function()
 							local tbl = {}
 							for k in next, msf.db.profile.soundList do
@@ -160,7 +196,7 @@ local options = function()
 					findSoundFileDesc = {
 						type = "description",
 						name = L.soundDesc,
-						order = 10,
+						order = 11,
 						width = "full",
 					},
 				},

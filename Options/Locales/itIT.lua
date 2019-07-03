@@ -7,6 +7,7 @@ local L = mod.L
 --L.soundId = "Sound ID (number)"
 --L.nickname = "Nickname (optional)"
 --L.muteSound = "Mute this sound"
+--L.previewSound = "Preview this sound"
 --L.removeSounds = "Remove Sounds"
 --L.soundIdOrName = "Sound ID or Nickname"
 --L.removeSound = "Unmute this sound"
