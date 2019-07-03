@@ -57,7 +57,7 @@ local options = function()
 						name = L.previewSound,
 						func = function()
 							local id = tonumber(addSoundById)
-							if id and id > 0 then
+							if id and id > 0 and id < 1000000000 then
 								local name = tostring(addSoundNickname)
 								if addSoundNickname and name and name ~= "" and not name:find("^ *$") then
 									if msf.db.profile.soundList[name] then
@@ -85,7 +85,7 @@ local options = function()
 						name = L.muteSound,
 						func = function()
 							local id = tonumber(addSoundById)
-							if id and id > 0 then
+							if id and id > 0 and id < 1000000000 then
 								local name = tostring(addSoundNickname)
 								if addSoundNickname and name and name ~= "" and not name:find("^ *$") then
 									if msf.db.profile.soundList[name] then
