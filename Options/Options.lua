@@ -30,6 +30,7 @@ local options = function()
 					inputSoundById = {
 						type = "input",
 						name = L.soundId,
+						dialogControl = "MuteSoundFileEditBox",
 						order = 2,
 						get = function()
 							return addSoundById
@@ -41,6 +42,7 @@ local options = function()
 					inputSoundNickname = {
 						type = "input",
 						name = L.nickname,
+						dialogControl = "MuteSoundFileEditBox",
 						order = 3,
 						get = function()
 							return addSoundNickname
@@ -90,6 +92,7 @@ local options = function()
 					removeSoundByIdOrName = {
 						type = "input",
 						name = L.soundIdOrName,
+						dialogControl = "MuteSoundFileEditBox",
 						order = 6,
 						get = function()
 							return removeSoundByIdOrName
