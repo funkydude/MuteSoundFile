@@ -165,10 +165,21 @@ local options = function()
 					},
 				},
 			},
+			presets = {
+				name = "Presets",
+				order = 2, type = "group",
+				args = {
+					presetHeader = {
+						type = "header",
+						name = "Coming soon",
+						order = 1,
+					},
+				},
+			},
 			profiles = adbo:GetOptionsTable(msf.db),
 		},
 	}
-	acOptions.args.profiles.order = 2
+	acOptions.args.profiles.order = 3
 	return acOptions
 end
 
