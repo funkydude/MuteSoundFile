@@ -18,4 +18,5 @@ local L = mod.L
 --L.invalidSound = "|cFF33FF99MuteSoundFile:|r Failed to mute sound %q as it must be a number."
 --L.noSuchNickname = "|cFF33FF99MuteSoundFile:|r A sound with nickname %q isn't in your mute list."
 --L.noSuchID = "|cFF33FF99MuteSoundFile:|r A sound with ID '%d' isn't in your mute list."
+--L.failedToAdd = "|cFF33FF99MuteSoundFile:|r There is no sound with id '%d' or you have sound disabled."
 --L.soundDesc = "\n\n\n\nSound file IDs can be acquired by searching this website:\nwow.tools"

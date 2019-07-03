@@ -71,15 +71,23 @@ local options = function()
 									if msf.db.profile.soundList[name] then
 										print(L.nicknameExists:format(name))
 									else
-										local _, id = PlaySoundFile(id, "Master")
-										if id then lastPlayedSound = id end
+										local _, playId = PlaySoundFile(id, "Master")
+										if playId and playId < 100000000 then -- Seems to return a random high id when you try to play non-sound files
+											lastPlayedSound = playId
+										else
+											print(L.failedToAdd:format(id))
+										end
 									end
 								else
 									if msf.db.profile.soundList[id] then
 										print(L.soundIdExists:format(id))
 									else
-										local _, id = PlaySoundFile(id, "Master")
-										if id then lastPlayedSound = id end
+										local _, playId = PlaySoundFile(id, "Master")
+										if playId and playId < 100000000 then -- Seems to return a random high id when you try to play non-sound files
+											lastPlayedSound = playId
+										else
+											print(L.failedToAdd:format(id))
+										end
 									end
 								end
 							else
@@ -99,27 +107,39 @@ local options = function()
 									if msf.db.profile.soundList[name] then
 										print(L.nicknameExists:format(name))
 									else
-										msf.db.profile.soundList[name] = id
-										MuteSoundFile(id)
 										if lastPlayedSound > 0 then
 											StopSound(lastPlayedSound)
 											lastPlayedSound = 0
 										end
-										mod[L.soundId] = nil
-										mod[L.nickname] = nil
+										local _, playId = PlaySoundFile(id, "Master")
+										if playId and playId < 100000000 then -- Seems to return a random high id when you try to play non-sound files
+											msf.db.profile.soundList[name] = id
+											StopSound(playId)
+											MuteSoundFile(id)
+											mod[L.soundId] = nil
+											mod[L.nickname] = nil
+										else
+											print(L.failedToAdd:format(id))
+										end
 									end
 								else
 									if msf.db.profile.soundList[id] then
 										print(L.soundIdExists:format(id))
 									else
-										msf.db.profile.soundList[id] = id
-										MuteSoundFile(id)
 										if lastPlayedSound > 0 then
 											StopSound(lastPlayedSound)
 											lastPlayedSound = 0
 										end
-										mod[L.soundId] = nil
-										mod[L.nickname] = nil
+										local _, playId = PlaySoundFile(id, "Master")
+										if playId and playId < 100000000 then -- Seems to return a random high id when you try to play non-sound files
+											msf.db.profile.soundList[id] = id
+											StopSound(playId)
+											MuteSoundFile(id)
+											mod[L.soundId] = nil
+											mod[L.nickname] = nil
+										else
+											print(L.failedToAdd:format(id))
+										end
 									end
 								end
 							else
