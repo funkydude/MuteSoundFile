@@ -149,6 +149,7 @@ local options = function()
 							for k in next, msf.db.profile.soundList do
 								tbl[#tbl+1] = k
 							end
+							table.sort(tbl)
 							return tbl
 						end,
 						width = "full",
