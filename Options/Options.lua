@@ -5,13 +5,13 @@ local adbo = LibStub("AceDBOptions-3.0")
 
 local msf = MuteSoundFileFrame
 local MuteSoundFile, UnmuteSoundFile = msf.MuteSoundFile, msf.UnmuteSoundFile
-local L
+local mod, L
 do
-	local _, mod = ...
+	local _
+	_, mod = ...
 	L = mod.L
 end
 
-local addSoundById, removeSoundByIdOrName, addSoundNickname = nil, nil, nil
 local lastPlayedSound = 0
 
 local options = function()
@@ -34,10 +34,10 @@ local options = function()
 						dialogControl = "MuteSoundFileEditBox",
 						order = 2,
 						get = function()
-							return addSoundById
+							return mod[L.soundId]
 						end,
 						set = function(_, value)
-							addSoundById = value
+							mod[L.soundId] = value
 						end,
 					},
 					inputSoundNickname = {
@@ -46,20 +46,20 @@ local options = function()
 						dialogControl = "MuteSoundFileEditBox",
 						order = 3,
 						get = function()
-							return addSoundNickname
+							return mod[L.nickname]
 						end,
 						set = function(_, value)
-							addSoundNickname = value
+							mod[L.nickname] = value
 						end,
 					},
 					previewSoundButton = {
 						type = "execute",
 						name = L.previewSound,
 						func = function()
-							local id = tonumber(addSoundById)
+							local id = tonumber(mod[L.soundId])
 							if id and id > 0 and id < 1000000000 then
-								local name = tostring(addSoundNickname)
-								if addSoundNickname and name and name ~= "" and not name:find("^ *$") then
+								local name = tostring(mod[L.nickname])
+								if mod[L.nickname] and name and name ~= "" and not name:find("^ *$") then
 									if msf.db.profile.soundList[name] then
 										print(L.nicknameExists:format(name))
 									else
@@ -75,7 +75,7 @@ local options = function()
 									end
 								end
 							else
-								print(L.invalidSound:format(addSoundById or ""))
+								print(L.invalidSound:format(mod[L.soundId] or ""))
 							end
 						end,
 						order = 4,
@@ -84,10 +84,10 @@ local options = function()
 						type = "execute",
 						name = L.muteSound,
 						func = function()
-							local id = tonumber(addSoundById)
+							local id = tonumber(mod[L.soundId])
 							if id and id > 0 and id < 1000000000 then
-								local name = tostring(addSoundNickname)
-								if addSoundNickname and name and name ~= "" and not name:find("^ *$") then
+								local name = tostring(mod[L.nickname])
+								if mod[L.nickname] and name and name ~= "" and not name:find("^ *$") then
 									if msf.db.profile.soundList[name] then
 										print(L.nicknameExists:format(name))
 									else
@@ -97,8 +97,8 @@ local options = function()
 											StopSound(lastPlayedSound)
 											lastPlayedSound = 0
 										end
-										addSoundById = nil
-										addSoundNickname = nil
+										mod[L.soundId] = nil
+										mod[L.nickname] = nil
 									end
 								else
 									if msf.db.profile.soundList[id] then
@@ -110,12 +110,12 @@ local options = function()
 											StopSound(lastPlayedSound)
 											lastPlayedSound = 0
 										end
-										addSoundById = nil
-										addSoundNickname = nil
+										mod[L.soundId] = nil
+										mod[L.nickname] = nil
 									end
 								end
 							else
-								print(L.invalidSound:format(addSoundById or ""))
+								print(L.invalidSound:format(mod[L.soundId] or ""))
 							end
 						end,
 						order = 5,
@@ -131,44 +131,44 @@ local options = function()
 						dialogControl = "MuteSoundFileEditBox",
 						order = 7,
 						get = function()
-							return removeSoundByIdOrName
+							return mod[L.soundIdOrName]
 						end,
 						set = function(_, value)
-							removeSoundByIdOrName = value
+							mod[L.soundIdOrName] = value
 						end,
 					},
 					removeButton = {
 						type = "execute",
 						name = L.removeSound,
 						func = function()
-							local id = tonumber(removeSoundByIdOrName)
+							local id = tonumber(mod[L.soundIdOrName])
 							if id then
 								if id > 0 and msf.db.profile.soundList[id] then
 									UnmuteSoundFile(id)
 									msf.db.profile.soundList[id] = nil
-									removeSoundByIdOrName = nil
+									mod[L.soundIdOrName] = nil
 								else
 									local numAsNick = tostring(id) -- We store nicknames as strings but the user may be using a number as a nickname e.g. -2
 									if msf.db.profile.soundList[numAsNick] then
 										UnmuteSoundFile(msf.db.profile.soundList[numAsNick])
 										msf.db.profile.soundList[numAsNick] = nil
-										removeSoundByIdOrName = nil
+										mod[L.soundIdOrName] = nil
 									else
 										print(L.noSuchID:format(id))
 									end
 								end
 							else
-								local name = tostring(removeSoundByIdOrName)
-								if removeSoundByIdOrName and name and name ~= "" and not name:find("^ *$") then
+								local name = tostring(mod[L.soundIdOrName])
+								if mod[L.soundIdOrName] and name and name ~= "" and not name:find("^ *$") then
 									if msf.db.profile.soundList[name] then
 										UnmuteSoundFile(msf.db.profile.soundList[name])
 										msf.db.profile.soundList[name] = nil
-										removeSoundByIdOrName = nil
+										mod[L.soundIdOrName] = nil
 									else
 										print(L.noSuchNickname:format(name))
 									end
 								else
-									print(L.noSuchNickname:format(removeSoundByIdOrName or ""))
+									print(L.noSuchNickname:format(mod[L.soundIdOrName] or ""))
 								end
 							end
 						end,
@@ -198,7 +198,7 @@ local options = function()
 								tbl[#tbl+1] = k
 							end
 							table.sort(tbl)
-							removeSoundByIdOrName = tostring(tbl[tableEntry]) -- Need to tostring numbers to get the editbox to update
+							mod[L.soundIdOrName] = tostring(tbl[tableEntry]) -- Need to tostring numbers to get the editbox to update
 						end,
 					},
 					findSoundFileDesc = {

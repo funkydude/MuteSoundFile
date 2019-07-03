@@ -1,6 +1,12 @@
 -- LICENSED UNDER 'ALL RIGHTS RESERVED'
 -- DO NOT USE THIS "LIBRARY" ANYWHERE ELSE OTHER THAN THE 'MUTESOUNDFILE' WOW ADDON
 
+local scope
+do
+	local _
+	_, scope = ...
+end
+
 local Type, Version = "MuteSoundFileEditBox", 1
 local AceGUI = LibStub and LibStub("AceGUI-3.0", true)
 if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
@@ -36,10 +42,13 @@ local function EditBox_OnTextChanged(frame)
 	local self = frame.obj
 	local value = frame:GetText()
 	if tostring(value) ~= tostring(self.lasttext) then
-		self:Fire("OnEnterPressed", value)
 		self.lasttext = value
-		frame.obj.editbox:SetFocus()
-		frame.obj.editbox:SetCursorPosition(100000000)
+		if self.label and self.label.GetText then
+			local text = self.label:GetText()
+			if text:len() > 1 then
+				scope[text] = value
+			end
+		end
 	end
 end
 
