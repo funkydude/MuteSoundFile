@@ -25,3 +25,4 @@ local L = mod.L
 --L.presetList = "Preset List"
 
 --L.lfgping = "LFG invitation pending ping"
+--L.yakVendors = "Mount: Grand Expedition Yak (Vendors)"
