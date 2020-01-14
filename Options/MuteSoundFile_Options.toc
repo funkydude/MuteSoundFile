@@ -1,4 +1,4 @@
-## Interface: 80200
+## Interface: 80300
 ## Title: MuteSoundFile_Options
 ## Author: Funkydude
 ## Notes: MuteSoundFile Configuration Options.
