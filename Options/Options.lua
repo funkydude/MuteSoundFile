@@ -31,12 +31,12 @@ local options = function()
 				name = "Sounds",
 				order = 1, type = "group",
 				args = {
-					addSoundHeader = {
+					soundPreviewHeader = {
 						type = "header",
-						name = L.addSounds,
+						name = L.soundPreview,
 						order = 1,
 					},
-					inputSoundById = {
+					previewSoundById = {
 						type = "input",
 						name = L.soundId,
 						dialogControl = "MuteSoundFileEditBox",
@@ -48,21 +48,10 @@ local options = function()
 							mod[L.soundId] = value
 						end,
 					},
-					inputSoundNickname = {
-						type = "input",
-						name = L.nickname,
-						dialogControl = "MuteSoundFileEditBox",
-						order = 3,
-						get = function()
-							return mod[L.nickname]
-						end,
-						set = function(_, value)
-							mod[L.nickname] = value
-						end,
-					},
 					previewSoundButton = {
 						type = "execute",
 						name = L.previewSound,
+						order = 3,
 						func = function()
 							local id = tonumber(mod[L.soundId])
 							if id and id > 0 and id < 1000000000 then
@@ -94,167 +83,18 @@ local options = function()
 								print(L.invalidSound:format(mod[L.soundId] or ""))
 							end
 						end,
+
+					},
+					muteSoundHeader = {
+						type = "header",
+						name = L.muteSounds,
 						order = 4,
-					},
-					addButton = {
-						type = "execute",
-						name = L.muteSound,
-						func = function()
-							local id = tonumber(mod[L.soundId])
-							if id and id > 0 and id < 1000000000 then
-								local name = tostring(mod[L.nickname])
-								if mod[L.nickname] and name and name ~= "" and not name:find("^ *$") then
-									if msf.db.profile.soundList[name] then
-										print(L.nicknameExists:format(name))
-									else
-										if lastPlayedSound > 0 then
-											StopSound(lastPlayedSound)
-											lastPlayedSound = 0
-										end
-										local _, playId = PlaySoundFile(id, "Master")
-										if playId and playId < 100000000 then -- Seems to return a random high id when you try to play non-sound files
-											msf.db.profile.soundList[name] = id
-											StopSound(playId)
-											MuteSoundFile(id)
-											mod[L.soundId] = nil
-											mod[L.nickname] = nil
-										else
-											print(L.failedToAdd:format(id))
-										end
-									end
-								else
-									if msf.db.profile.soundList[id] then
-										print(L.soundIdExists:format(id))
-									else
-										if lastPlayedSound > 0 then
-											StopSound(lastPlayedSound)
-											lastPlayedSound = 0
-										end
-										local _, playId = PlaySoundFile(id, "Master")
-										if playId and playId < 100000000 then -- Seems to return a random high id when you try to play non-sound files
-											msf.db.profile.soundList[id] = id
-											StopSound(playId)
-											MuteSoundFile(id)
-											mod[L.soundId] = nil
-											mod[L.nickname] = nil
-										else
-											print(L.failedToAdd:format(id))
-										end
-									end
-								end
-							else
-								print(L.invalidSound:format(mod[L.soundId] or ""))
-							end
-						end,
-						order = 5,
-					},
-					removeSoundByIdOrNameHeader = {
-						type = "header",
-						name = L.removeSounds,
-						order = 6,
-					},
-					removeSoundByIdOrNameInput = {
-						type = "input",
-						name = L.soundIdOrName,
-						dialogControl = "MuteSoundFileEditBox",
-						order = 7,
-						get = function()
-							return mod[L.soundIdOrName]
-						end,
-						set = function(_, value)
-							mod[L.soundIdOrName] = value
-						end,
-					},
-					removeButton = {
-						type = "execute",
-						name = L.removeSound,
-						func = function()
-							local id = tonumber(mod[L.soundIdOrName])
-							if id then
-								if id > 0 and msf.db.profile.soundList[id] then
-									UnmuteSoundFile(id)
-									msf.db.profile.soundList[id] = nil
-									mod[L.soundIdOrName] = nil
-								else
-									local numAsNick = tostring(id) -- We store nicknames as strings but the user may be using a number as a nickname e.g. -2
-									if msf.db.profile.soundList[numAsNick] then
-										UnmuteSoundFile(msf.db.profile.soundList[numAsNick])
-										msf.db.profile.soundList[numAsNick] = nil
-										mod[L.soundIdOrName] = nil
-									else
-										print(L.noSuchID:format(id))
-									end
-								end
-							else
-								local name = tostring(mod[L.soundIdOrName])
-								if mod[L.soundIdOrName] and name and name ~= "" and not name:find("^ *$") then
-									if msf.db.profile.soundList[name] then
-										UnmuteSoundFile(msf.db.profile.soundList[name])
-										msf.db.profile.soundList[name] = nil
-										mod[L.soundIdOrName] = nil
-									else
-										print(L.noSuchNickname:format(name))
-									end
-								else
-									print(L.noSuchNickname:format(mod[L.soundIdOrName] or ""))
-								end
-							end
-						end,
-						order = 8,
-					},
-					previewSoundHeader = {
-						type = "header",
-						name = L.soundsList,
-						order = 9,
-					},
-					soundsDropdown = {
-						type = "select",
-						name = L.mutedSounds,
-						order = 10,
-						itemControl = "MuteSoundFileSound",
-						values = function()
-							local tbl = {}
-							for k in next, msf.db.profile.soundList do
-								tbl[#tbl+1] = k
-							end
-							table.sort(tbl, sortTbl)
-							return tbl
-						end,
-						width = "full",
-						set = function(_, tableEntry)
-							local tbl = {}
-							for k in next, msf.db.profile.soundList do
-								tbl[#tbl+1] = k
-							end
-							table.sort(tbl, sortTbl)
-							mod[L.soundIdOrName] = tostring(tbl[tableEntry]) -- Need to tostring numbers to get the editbox to update
-						end,
-					},
-					findSoundFileDesc = {
-						type = "description",
-						name = L.soundDesc,
-						order = 11,
-						width = "full",
-					},
-				},
-			},
-			collections = {
-				name = L.collections,
-				order = 2, type = "group",
-				args = {
-					description = {
-						type = "description",
-						name = L.collectionsDesc,
-						order = 1,
-						width = "full",
-						fontSize = "medium",
 					},
 					collectionNameInput = {
 						type = "input",
 						name = L.collectionName,
-						order = 2,
+						order = 5,
 						dialogControl = "MuteSoundFileEditBox",
-						width = "full",
 						get = function()
 							return mod[L.collectionName]
 						end,
@@ -262,18 +102,47 @@ local options = function()
 							mod[L.collectionName] = value
 						end,
 					},
+					collectionsDropdown = {
+						type = "select",
+						name = L.collectionList,
+						order = 6,
+						values = function()
+							local tbl = {}
+							for k,v in next, msf.db.profile.soundList do
+								tbl[k] = k
+							end
+							table.sort(tbl, sortTbl)
+							return tbl
+						end,
+						set = function(_, tableEntry)
+							mod[L.collectionName] = tableEntry
+							local text = ""
+							local sounds = msf.db.profile.soundList[tableEntry]
+							if type(sounds) == "table" then
+								for k, v in next, msf.db.profile.soundList[tableEntry] do
+									if text == "" then
+										text = tostring(v)
+									else
+										text = text.."\n"..tostring(v)
+									end
+								end
+							else
+								text = tostring(sounds)
+							end
+							mod[L.soundIDs] = text
+						end,
+					},
 					collectionCreateOrSaveButton = {
 						type = "execute",
 						name = L.collectionCreateOrSave,
-						order = 3,
+						order = 7,
 						func = function()
-							
 							if mod[L.collectionName] == nil then
 								print(L.collectionNoName)
 							else
 								local failed = false
 								local tbl = {}
-								for s in mod[L.collectionIDs]:gmatch("[^\r\n]+") do
+								for s in mod[L.soundIDs]:gmatch("[^\r\n]+") do
 									local OK, err = pcall(tonumber, s)
 									if not OK then
 										failed = true
@@ -282,14 +151,17 @@ local options = function()
 										table.insert(tbl, tonumber(s))
 									end	
 								end
-								local collection = msf.db.profile.collections[mod[L.collectionName]] 
-								if collection then 
-									for _, id in pairs(collection) do
-										UnmuteSoundFile(id)
+								local sounds = msf.db.profile.soundList[mod[L.collectionName]] 
+								if sounds then
+									if type(sounds) == "table"  then 
+										for _, id in next, sounds do
+											UnmuteSoundFile(id)
+										end
+									else
+										UnmuteSoundFile(sounds)
 									end
 								end
-								
-								for _, id in pairs(tbl) do
+								for _, id in next, tbl do
 									local _, playId = PlaySoundFile(id, "Master")
 									if playId and playId < 100000000 then -- Seems to return a random high id when you try to play non-sound files
 										StopSound(playId)
@@ -300,13 +172,22 @@ local options = function()
 								end
 				
 								if not failed then
-									msf.db.profile.collections[mod[L.collectionName]] = tbl
+									local count = 0
+									for _ in next, tbl do
+										count = count + 1
+										if count > 1 then break end
+									end
+									if count == 1 then
+										msf.db.profile.soundList[mod[L.collectionName]] = tbl[1]
+									else
+										msf.db.profile.soundList[mod[L.collectionName]] = tbl
+									end
 									print(L.collectionCreatedOrSaved:format(mod[L.collectionName]))
-									for k, v in pairs(tbl) do
+									for k, v in next, tbl do
 										MuteSoundFile(v)
 									end
 									mod[L.collectionName] = nil
-									mod[L.collectionIDs] = nil
+									mod[L.soundIDs] = nil
 								end
 							end
 						end
@@ -314,60 +195,41 @@ local options = function()
 					collectionRemoveButton = {
 						type = "execute",
 						name = L.collectionRemove,
-						order = 4,
+						order = 8,
 						func = function()
-							if msf.db.profile.collections[mod[L.collectionName]] == nil then
+							if msf.db.profile.soundList[mod[L.collectionName]] == nil then
 								print(L.noSuchCollectionName:format(mod[L.collectionName] or ""))
 							else
-								for k, v in pairs(msf.db.profile.collections[mod[L.collectionName]]) do
+								for k, v in next, msf.db.profile.soundList[mod[L.collectionName]] do
 									UnmuteSoundFile(v);
 								end
-								msf.db.profile.collections[mod[L.collectionName]] = nil
+								msf.db.profile.soundList[mod[L.collectionName]] = nil
 								mod[L.collectionName] = nil
-								mod[L.collectionIDs] = nil
+								mod[L.soundIDs] = nil
 							end
 						
 						end
 					},
-					collectionsDropdown = {
-						type = "select",
-						name = L.collectionList,
-						order = 5,
-						values = function()
-							local tbl = {}
-							for k,v in pairs(msf.db.profile.collections) do
-								tbl[k] = k
-							end
-							table.sort(tbl, sortTbl)
-							return tbl
-						end,
-						width = "full",
-						set = function(_, tableEntry)
-							mod[L.collectionName] = tableEntry
-							local text = ""
-							for k, v in pairs(msf.db.profile.collections[tableEntry]) do
-								if text == "" then
-									text = tostring(v)
-								else
-									text = text.."\n"..tostring(v)
-								end
-							end
-							mod[L.collectionIDs] = text
-						end,
-					},
-					collectionIdsInput = {
+					soundIdsInput = {
 						type = "input",
-						name = L.collectionIDs,
-						order = 6,
+						name = L.soundIDs,
+						order = 9,
 						width = "full",
-						multiline = 10,
+						multiline = 7,
+						desc = L.soundIDsDesc,
 						get = function()
-							return mod[L.collectionIDs];
+							return mod[L.soundIDs];
 						end,
 						set = function(_, value)
-							mod[L.collectionIDs] = value
+							mod[L.soundIDs] = value
 						end
-					}
+					},
+					findSoundFileDesc = {
+						type = "description",
+						name = L.soundDesc,
+						order = 10,
+						width = "full",
+					},
 				},
 			},
 			presets = {

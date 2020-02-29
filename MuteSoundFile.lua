@@ -35,18 +35,19 @@ frame:SetScript("OnEvent", function(f, event, addon)
 	}
 	f.db = LibStub("AceDB-3.0"):New("MuteSoundFileDB", defaults, true)
 
-	for _, soundID in next, f.db.profile.soundList do
-		MuteSoundFile(soundID)
+	for _, sounds in next, f.db.profile.soundList do
+		if type(sounds) == "table" then
+			for _, soundID in  next, sounds do
+				MuteSoundFile(soundID)
+			end
+		else
+			MuteSoundFile(sounds)
+		end
 	end
 	for _, presetTable in next, f.db.profile.mutedPresets do
 		for i = 1, #presetTable do
 			local id = presetTable[i]
 			MuteSoundFile(id)
-		end
-	end
-	for _, collection in next, f.db.profile.collections do
-		for _, soundID in  next, collection do
-			MuteSoundFile(soundID)
 		end
 	end
 end)
