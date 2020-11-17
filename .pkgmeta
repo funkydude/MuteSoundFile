@@ -10,7 +10,3 @@ externals:
 
 move-folders:
     MuteSoundFile/Options: MuteSoundFile_Options
-
-ignore:
-  - .travis.yml
-  - README.md
