@@ -1,6 +1,5 @@
 
-local name, mod = ...
-local L = mod.L
+local name = ...
 local MuteSoundFile, UnmuteSoundFile = MuteSoundFile, UnmuteSoundFile
 
 local frame = CreateFrame("Frame", "MuteSoundFileFrame")
@@ -20,10 +19,6 @@ end
 frame:SetScript("OnEvent", function(f, event, addon)
 	if addon ~= name then return end
 	f:UnregisterEvent(event)
-
-	if type(MuteSoundFileDB) ~= "table" then
-		MuteSoundFileDB = {}
-	end
 
 	-- saved variables database setup
 	local defaults = {

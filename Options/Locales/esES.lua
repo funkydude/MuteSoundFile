@@ -3,7 +3,7 @@ if GetLocale() ~= "esES" and GetLocale() ~= "esMX" then return end
 local _, mod = ...
 local L = mod.L
 
---L.addSounds = "Add Sounds"
+L.addSounds = "Add Sounds"
 --L.soundId = "Sound ID (number)"
 --L.nickname = "Nickname (optional)"
 --L.muteSound = "|T514607:0|t Mute this sound"

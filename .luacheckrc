@@ -8,8 +8,6 @@ ignore = {
 	"11/SLASH_MuteSoundFile[12]", -- slash handlers
 }
 globals = {
-	-- Lua
-
 	-- Addon
 	"MuteSoundFileFrame",
 	"LibStub",
@@ -19,5 +17,9 @@ globals = {
 	"EnableAddOn",
 	"GetLocale",
 	"LoadAddOn",
+	"MuteSoundFile",
+	"ReloadUI",
 	"SlashCmdList",
+	"StopSound",
+	"UnmuteSoundFile",
 }
