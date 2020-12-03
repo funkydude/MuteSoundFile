@@ -4,7 +4,6 @@
 local prototype = LibStub("AceGUI-3.0-DropDown-ItemBase"):GetItemBase()
 local version = 1
 
-local media = LibStub("LibSharedMedia-3.0")
 local gui = LibStub("AceGUI-3.0")
 
 -----------------------------------------------------------------------
