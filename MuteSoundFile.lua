@@ -33,6 +33,12 @@ frame:SetScript("OnEvent", function(f, event, addon)
 		},
 	}
 	f.db = LibStub("AceDB-3.0"):New("MuteSoundFileDB", defaults, true)
+	do
+		local rl = function() ReloadUI() end
+		f.db.RegisterCallback(f, "OnProfileChanged", rl)
+		f.db.RegisterCallback(f, "OnProfileCopied", rl)
+		f.db.RegisterCallback(f, "OnProfileReset", rl)
+	end
 
 	for _, soundID in next, f.db.profile.soundList do
 		MuteSoundFile(soundID)
