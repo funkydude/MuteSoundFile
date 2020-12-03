@@ -18,6 +18,7 @@ globals = {
 	"GetLocale",
 	"LoadAddOn",
 	"MuteSoundFile",
+	"PlaySoundFile",
 	"ReloadUI",
 	"SlashCmdList",
 	"StopSound",
