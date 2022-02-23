@@ -1,4 +1,4 @@
-## Interface: 90200
+## Interface: 20503
 ## Title: MuteSoundFile_Options
 ## Author: Funkydude
 ## Notes: MuteSoundFile Configuration Options.
