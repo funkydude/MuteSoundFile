@@ -1,3 +1,4 @@
+
 local _, scope = ...
 scope.presets = {
 	lfgping = { -- LFG people requesting to join your group ping
