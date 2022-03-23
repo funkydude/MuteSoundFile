@@ -26,3 +26,4 @@ L.addSounds = "Add Sounds"
 
 --L.lfgping = "LFG invitation pending ping"
 --L.yakVendors = "Mount: Grand Expedition Yak (Vendors)"
+--L.sunwarmedFurline = "Mount: Sunwarmed Furline"
