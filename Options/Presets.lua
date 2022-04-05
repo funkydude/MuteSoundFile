@@ -79,7 +79,7 @@ scope.presets = {
 		3106717, -- vo_83_pc_vulpera_male_155_m
 	},
 	mooEmotes = {
-        542820, -- taurenfemalemoo01
-        542894, -- taurenmalemoo01
+		542820, -- taurenfemalemoo01
+		542894, -- taurenmalemoo01
 	},
 }
