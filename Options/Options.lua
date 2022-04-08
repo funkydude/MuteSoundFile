@@ -303,6 +303,13 @@ local options = function()
 							end
 						end,
 					},
+					noteSubmitYourOwn = {
+						type = "description",
+						name = L.presetSubmitYourOwn,
+						order = 3,
+						width = "full",
+						fontSize = "medium",
+					},
 				},
 			},
 			profiles = adbo:GetOptionsTable(msf.db),
