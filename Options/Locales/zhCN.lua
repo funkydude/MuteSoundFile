@@ -25,7 +25,7 @@ L.addSounds = "Add Sounds"
 --L.presetList = "Preset List"
 --L.presetSubmitYourOwn = "\n\nGet your own presets added to this dropdown by submitting pull requests on our GitHub page!"
 
---L.lfgping = "LFG invitation pending ping"
+--L.lfgping = "UI: LFG ping (invitation pending)"
 --L.yakVendors = "Mount: Grand Expedition Yak (Vendors)"
 --L.sunwarmedFurline = "Mount: Sunwarmed Furline"
 --L.choochooEmotes = "Emote: Train (choo-choo)"
