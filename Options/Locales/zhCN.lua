@@ -1,4 +1,5 @@
-if GetLocale() ~= "zhTW" then return end
+
+if GetLocale() ~= "zhCN" then return end
 local _, mod = ...
 local L = mod.L
 
