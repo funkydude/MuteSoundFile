@@ -20,6 +20,7 @@
 ## X-License: All Rights Reserved: You are free to fork and modify on GitHub, please ask us about anything else.
 ## X-Curse-Project-ID: 325542
 ## X-WoWI-ID: 25045
+## X-Wago-ID: vEGPne61
 ## OptionalDeps: Ace3
 ## X-Embeds: Ace3
 
