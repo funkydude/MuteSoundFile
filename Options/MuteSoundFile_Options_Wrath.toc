@@ -1,4 +1,4 @@
-## Interface: 30402
+## Interface: 30403
 ## Title: MuteSoundFile_Options
 ## Author: Funkydude
 ## Notes: MuteSoundFile Configuration Options.
