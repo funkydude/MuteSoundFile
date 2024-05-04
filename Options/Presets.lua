@@ -82,4 +82,21 @@ scope.presets = {
 		542820, -- taurenfemalemoo01
 		542894, -- taurenmalemoo01
 	},
+	peaFowl = {
+		5546937, -- peacockmount_cast_oneshot_5546937
+		5546939, -- peacockmount_cast_oneshot_5546939
+		5546941, -- peacockmount_cast_oneshot_5546941
+		5546943, -- peacockmount_cast_oneshot_5546943
+		5546596, -- peacockmount_moving_5546596
+		5546598, -- peacockmount_moving_5546598
+		5546600, -- peacockmount_moving_5546600
+		5546602, -- peacockmount_moving_5546602
+		5546604, -- peacockmount_moving_5546604
+		5546606, -- peacockmount_moving_5546606
+		5546608, -- peacockmount_moving_5546608
+		5546610, -- peacockmount_moving_5546610
+		5546612, -- peacockmount_moving_5546612
+		5546614, -- peacockmount_moving_5546614
+		5546616, -- peacockmount_moving_5546616
+	},
 }
