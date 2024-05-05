@@ -1,5 +1,5 @@
 
-if GetLocale() ~= "esES" and GetLocale() ~= "esMX" then return end
+if GetLocale() ~= "esES" then return end
 local _, mod = ...
 local L = mod.L
 
@@ -30,4 +30,4 @@ L.addSounds = "Add Sounds"
 --L.sunwarmedFurline = "Mount: Sunwarmed Furline"
 --L.choochooEmotes = "Emote: Train (choo-choo)"
 --L.mooEmotes = "Emote: Moo"
---L.peaFowl = "Mount: Peafowl"
+--L.peaFowl = "Mount: Majestic Azure Peafowl"

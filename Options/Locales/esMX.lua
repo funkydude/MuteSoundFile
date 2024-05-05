@@ -1,5 +1,5 @@
 
-if GetLocale() ~= "frFR" then return end
+if GetLocale() ~= "esMX" then return end
 local _, mod = ...
 local L = mod.L
 
