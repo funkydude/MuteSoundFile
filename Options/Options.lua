@@ -236,6 +236,14 @@ local options = function()
 						order = 11,
 						width = "full",
 					},
+					wago = {
+						type = "input",
+						get = function() return "wago.tools/sounds" end,
+						set = function() end,
+						name = "wago.tools/sounds",
+						order = 12,
+						width = 1,
+					},
 				},
 			},
 			presets = {
