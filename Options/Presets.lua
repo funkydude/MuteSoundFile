@@ -99,4 +99,12 @@ scope.presets = {
 		5546614, -- peacockmount_moving_5546614
 		5546616, -- peacockmount_moving_5546616
 	},
+	brutoUnta = {
+		1998112, -- vo_801_tortollan_male_04_m
+		1998113, -- vo_801_tortollan_male_05_m
+		1998114, -- vo_801_tortollan_male_06_m
+		1998115, -- vo_801_tortollan_male_07_m
+		1998116, -- vo_801_tortollan_male_08_m
+		1998117, -- vo_801_tortollan_male_09_m
+	},
 }
