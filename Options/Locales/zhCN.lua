@@ -23,7 +23,7 @@ L.soundDesc = "\n\n\n\n你可以到这个网站查询音效ID："
 L.presetDesc = "你可以快速地从默认清单里选择要静音的音效，默认清单的每一个条目都可以是单独一个音效，或多个同类音效。列表中，|T136814:0|t 表示已静音，|T136813:0|t 表示未静音。\n\n"
 L.presets = "默认"
 L.presetList = "默认清单"
-L.presetSubmitYourOwn = "\n\n欢迎到我们的 GitHub 项目页面推送你想添加至默认静音清单的音效！"
+L.presetSubmitYourOwn = "\n\n\n\n\n\n欢迎到我们的 GitHub 项目页面推送你想添加至默认静音清单的音效！"
 
 L.lfgping = "界面：随机团队等待进入"
 L.yakVendors = "座骑：雄壮远足牦牛"

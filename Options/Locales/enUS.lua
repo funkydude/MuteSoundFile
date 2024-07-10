@@ -25,7 +25,7 @@ L.soundDesc = "\n\n\n\nSound file IDs can be acquired by searching this website:
 L.presetDesc = "To speed up muting sounds, you can select them from the preset list. Presets can be one or multiple sounds. When you mute a specific preset a |T136814:0|t means muted and |T136813:0|t means not muted.\n\n"
 L.presets = "Presets"
 L.presetList = "Preset List"
-L.presetSubmitYourOwn = "\n\nGet your own presets added to this dropdown by submitting pull requests on our GitHub page!"
+L.presetSubmitYourOwn = "\n\n\n\n\n\nGet your own presets added to this dropdown by submitting pull requests on our GitHub page!"
 
 L.lfgping = "UI: LFG ping (invitation pending)"
 L.yakVendors = "Mount: Grand Expedition Yak (Vendors)"
