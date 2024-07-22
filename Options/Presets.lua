@@ -107,4 +107,31 @@ scope.presets = {
 		1998116, -- vo_801_tortollan_male_08_m
 		1998117, -- vo_801_tortollan_male_09_m
 	},
+	
+	zerethWaterfall = {
+		608139, -- emitter_waterfall_large_01
+		608141, -- emitter_waterfall_large_02
+		608143, -- emitter_waterfall_large_03
+		610223, -- emitter_waterfall_medium_01
+		610225, -- emitter_waterfall_medium_02
+		610227, -- emitter_waterfall_medium_03
+		610229, -- emitter_waterfall_medium_04
+		610231, -- emitter_waterfall_medium_05
+		610233, -- emitter_waterfall_small_01
+		610235, -- emitter_waterfall_small_02
+		610237, -- emitter_waterfall_small_03
+		610239, -- emitter_waterfall_small_04
+		610241, -- emitter_waterfall_small_05
+		610243, -- emitter_waterfall_small_06
+		610245, -- emitter_waterfall_small_07
+		610886, -- emitter_waterfall_smalltomedium_01
+		610888, -- emitter_waterfall_smalltomedium_02
+		610890, -- emitter_waterfall_smalltomedium_03
+		3720485, -- go_9pln_waterfall_base01_loop_3720485
+		3720487, -- go_9pln_waterfall_base01_loop_3720487
+		3720489, -- go_9pln_waterfall_base01_loop_3720489
+		3720491, -- go_9pln_waterfall_base01_loop_3720491
+		3720493, -- go_9pln_waterfall_base01_loop_3720493
+	
+	},
 }
