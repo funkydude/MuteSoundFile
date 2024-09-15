@@ -107,4 +107,14 @@ scope.presets = {
 		1998116, -- vo_801_tortollan_male_08_m
 		1998117, -- vo_801_tortollan_male_09_m
 	},
+	innkeeperRonesh = {
+		-- IDs taken from https://www.wowhead.com/sound=266531/filedata-5919534
+		5919534,
+		5919536,
+		5919568,
+		5919570,
+		5919572,
+		5919582,
+		5919588,
+	}
 }
