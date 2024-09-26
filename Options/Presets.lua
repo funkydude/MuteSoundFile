@@ -109,8 +109,8 @@ scope.presets = {
 	},
 	innkeeperRonesh = {
 		-- IDs taken from https://www.wowhead.com/sound=266531/filedata-5919534
-		5919568,
-		5919570,
-		5919572,
+		5919568, -- earthendwarfmale_fidget13_5919568.ogg
+		5919570, -- earthendwarfmale_fidget13_5919570.ogg
+		5919572, -- earthendwarfmale_fidget13_5919572.ogg
 	}
 }
