@@ -107,7 +107,7 @@ scope.presets = {
 		1998116, -- vo_801_tortollan_male_08_m
 		1998117, -- vo_801_tortollan_male_09_m
 	},
-	innkeeperRonesh = {
+	dornogalInn = {
 		-- IDs taken from https://www.wowhead.com/sound=266531/filedata-5919534
 		5919568, -- earthendwarfmale_fidget13_5919568.ogg
 		5919570, -- earthendwarfmale_fidget13_5919570.ogg
