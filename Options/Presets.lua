@@ -107,4 +107,14 @@ scope.presets = {
 		1998116, -- vo_801_tortollan_male_08_m
 		1998117, -- vo_801_tortollan_male_09_m
 	},
+	dornogalInn = {
+		-- IDs taken from https://www.wowhead.com/sound=266531/filedata-5919534
+		5919534, -- earthendwarfmale_fidget_5919534.ogg
+		5919536, -- earthendwarfmale_fidget_5919536.ogg
+		5919568, -- earthendwarfmale_fidget13_5919568.ogg
+		5919570, -- earthendwarfmale_fidget13_5919570.ogg
+		5919572, -- earthendwarfmale_fidget13_5919572.ogg
+		5919582, -- holdingmeadmug_aurastart_loop_5919582.ogg
+		5919588, -- holdingmeadmug_aurastart_loop_5919588.ogg
+	}
 }
