@@ -15,9 +15,7 @@ globals = {
 	-- WoW
 	"C_AddOns",
 	"CreateFrame",
-	"EnableAddOn",
 	"GetLocale",
-	"LoadAddOn",
 	"MuteSoundFile",
 	"PlaySoundFile",
 	"ReloadUI",
