@@ -6,10 +6,8 @@ local frame = CreateFrame("Frame", "MuteSoundFileFrame")
 frame.MuteSoundFile, frame.UnmuteSoundFile = MuteSoundFile, UnmuteSoundFile
 do
 	local function openOpts()
-		local EnableAddOn = C_AddOns.EnableAddOn
-		local LoadAddOn = C_AddOns.LoadAddOn
-		EnableAddOn("MuteSoundFile_Options") -- Make sure it wasn't left disabled for whatever reason
-		LoadAddOn("MuteSoundFile_Options")
+		C_AddOns.EnableAddOn("MuteSoundFile_Options") -- Make sure it wasn't left disabled for whatever reason
+		C_AddOns.LoadAddOn("MuteSoundFile_Options")
 		LibStub("AceConfigDialog-3.0"):Open(name)
 	end
 	SlashCmdList[name] = openOpts
