@@ -1,7 +1,7 @@
-## Interface: 11506, 11507, 20504, 30404, 40402, 40401, 50500, 110105, 110107, 110100
+## Interface: 11506, 11507, 20504, 30405, 40402, 50501, 50500, 110205, 110207, 110200
 ## Version: @project-version@
 ## Title: MuteSoundFile
-## Author: Funkydude
+## Author: Funkeh
 ## Notes: Mute sound files in World of Warcraft.
 ## Notes-esES: Mute sound files in World of Warcraft.
 ## Notes-esMX: Mute sound files in World of Warcraft.
