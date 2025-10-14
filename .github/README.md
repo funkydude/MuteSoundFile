@@ -6,4 +6,5 @@
 * /mutesoundfile
 
 ## Download
-<https://www.curseforge.com/wow/addons/mutesoundfile>
+* <https://www.curseforge.com/wow/addons/mutesoundfile>
+* <https://addons.wago.io/addons/mutesoundfile>
