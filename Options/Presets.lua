@@ -116,5 +116,18 @@ scope.presets = {
 		5919572, -- earthendwarfmale_fidget13_5919572.ogg
 		5919582, -- holdingmeadmug_aurastart_loop_5919582.ogg
 		5919588, -- holdingmeadmug_aurastart_loop_5919588.ogg
+	},
+	chestMail = {
+		-- https://www.wowhead.com/sound=1005/foleysoundchain
+		567585, -- ChainFoley01
+		567600, -- ChainFoley02
+		567597, -- ChainFoley03
+		567605, -- ChainFoley04
+		567587,	-- ChainFoley05
+		567590, -- ChainFoley06
+		567603, -- ChainFoley07
+		567594, -- ChainFoley08
+		567592, -- ChainFoley09
+		567593, -- ChainFoley10
 	}
 }
