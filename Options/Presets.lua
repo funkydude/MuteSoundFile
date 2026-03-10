@@ -129,5 +129,13 @@ scope.presets = {
 		567594, -- ChainFoley08
 		567592, -- ChainFoley09
 		567593, -- ChainFoley10
-	}
+	},
+	dundun = {
+		-- https://www.wowhead.com/sound=301585/vo-120-dundun-rat-20-m
+		-- https://www.wowhead.com/sound=301586/vo-120-dundun-rat-21-m
+		-- https://www.wowhead.com/sound=301587/vo-120-dundun-rat-22-m
+		7251817, -- vo_120_dundun_rat_20_m.ogg
+		7251820, -- vo_120_dundun_rat_21_m.ogg
+		7251823, -- vo_120_dundun_rat_22_m.ogg
+	},
 }
