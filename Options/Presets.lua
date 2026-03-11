@@ -138,4 +138,47 @@ scope.presets = {
 		7251820, -- vo_120_dundun_rat_21_m.ogg
 		7251823, -- vo_120_dundun_rat_22_m.ogg
 	},
+	valeera = {
+		-- Delve companion https://www.wowhead.com/npc=248567/valeera-sanguinar
+		-- https://wago.tools/sounds?page=1&search=vo_120_valeera_sanguinar_
+		7430043, -- vo_120_valeera_sanguinar_04_f.ogg
+		7430047, -- vo_120_valeera_sanguinar_05_f.ogg
+		7430050, -- vo_120_valeera_sanguinar_06_f.ogg
+		7430053, -- vo_120_valeera_sanguinar_07_f.ogg
+		7430056, -- vo_120_valeera_sanguinar_08_f.ogg
+		7430059, -- vo_120_valeera_sanguinar_09_f.ogg
+		7430063, -- vo_120_valeera_sanguinar_10_f.ogg
+		7430066, -- vo_120_valeera_sanguinar_11_f.ogg
+		7430069, -- vo_120_valeera_sanguinar_12_f.ogg
+		7430072, -- vo_120_valeera_sanguinar_13_f.ogg
+		7430075, -- vo_120_valeera_sanguinar_14_f.ogg
+		7430078, -- vo_120_valeera_sanguinar_15_f.ogg
+		7430082, -- vo_120_valeera_sanguinar_16_f.ogg
+		7430086, -- vo_120_valeera_sanguinar_17_f.ogg
+		7430089, -- vo_120_valeera_sanguinar_18_f.ogg
+		7430092, -- vo_120_valeera_sanguinar_19_f.ogg
+		7430095, -- vo_120_valeera_sanguinar_20_f.ogg
+		7430098, -- vo_120_valeera_sanguinar_21_f.ogg
+		7430101, -- vo_120_valeera_sanguinar_22_f.ogg
+		7430104, -- vo_120_valeera_sanguinar_23_f.ogg
+		7430107, -- vo_120_valeera_sanguinar_24_f.ogg
+		7430110, -- vo_120_valeera_sanguinar_25_f.ogg
+		7430113, -- vo_120_valeera_sanguinar_26_f.ogg
+		7430116, -- vo_120_valeera_sanguinar_27_f.ogg
+		7430119, -- vo_120_valeera_sanguinar_28_f.ogg
+		7430122, -- vo_120_valeera_sanguinar_29_f.ogg
+		7430125, -- vo_120_valeera_sanguinar_30_f.ogg
+		7430156, -- vo_120_valeera_sanguinar_31_f.ogg
+		7430159, -- vo_120_valeera_sanguinar_32_f.ogg
+		7430162, -- vo_120_valeera_sanguinar_33_f.ogg
+		7430165, -- vo_120_valeera_sanguinar_34_f.ogg
+		7430168, -- vo_120_valeera_sanguinar_35_f.ogg
+		7430171, -- vo_120_valeera_sanguinar_36_f.ogg
+		7430174, -- vo_120_valeera_sanguinar_37_f.ogg
+		7430177, -- vo_120_valeera_sanguinar_38_f.ogg
+		7430180, -- vo_120_valeera_sanguinar_39_f.ogg
+		7430183, -- vo_120_valeera_sanguinar_40_f.ogg
+		7430186, -- vo_120_valeera_sanguinar_41_f.ogg
+		7430189, -- vo_120_valeera_sanguinar_42_f.ogg
+	},
 }
