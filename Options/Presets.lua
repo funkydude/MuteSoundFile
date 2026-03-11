@@ -140,7 +140,7 @@ scope.presets = {
 	},
 	valeera = {
 		-- Delve companion https://www.wowhead.com/npc=248567/valeera-sanguinar
-		-- Combat sound IDs #04 - #42 https://wago.tools/sounds?page=8&search=valeera
+		-- https://wago.tools/sounds?page=1&search=vo_120_valeera_sanguinar_
 		7430043, -- vo_120_valeera_sanguinar_04_f.ogg
 		7430047, -- vo_120_valeera_sanguinar_05_f.ogg
 		7430050, -- vo_120_valeera_sanguinar_06_f.ogg
