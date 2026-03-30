@@ -183,8 +183,6 @@ scope.presets = {
 	},
 	xalatath = {
 		-- Xalatath in low M+ keys
-		-- Haha - vo_110_xalatath_blade_of_the_black_empire_46_f.ogg
-		5854706,
 		-- Your survival wasn't necessary - vo_110_xalatath_blade_of_the_black_empire_34_f.ogg
 		5835211,
 		-- I simply wish you'd lasted a little longer - vo_110_xalatath_blade_of_the_black_empire_35_f.ogg
@@ -219,17 +217,5 @@ scope.presets = {
 		6178498,
 		-- Shred of Control - vo_111_xalatath_blade_of_the_black_empire_27_f.ogg
 		6178500,
-		-- My Emissary Brings You Power - vo_111_xalatath_blade_of_the_black_empire_21_f.ogg
-		6178494,
-		-- A Willing Sacrifice - vo_111_xalatath_blade_of_the_black_empire_24_f.ogg
-		6178497,
-		-- Resist - vo_111_xalatath_blade_of_the_black_empire_29_f.ogg
-		6178502,
-		-- Overcome This Trial - vo_111_xalatath_blade_of_the_black_empire_31_f.ogg
-		6178504,
-		-- My Power Is Transcendant - vo_111_xalatath_blade_of_the_black_empire_33_f.ogg
-		6178506,
-		-- A Gift of Power - vo_111_xalatath_blade_of_the_black_empire_35_f.ogg
-		6178508,
 	}
 }
