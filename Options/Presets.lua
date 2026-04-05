@@ -217,5 +217,17 @@ scope.presets = {
 		6178498,
 		-- Shred of Control - vo_111_xalatath_blade_of_the_black_empire_27_f.ogg
 		6178500,
+		-- My Emissary Brings You Power - vo_111_xalatath_blade_of_the_black_empire_21_f.ogg
+		6178494,
+		-- A Willing Sacrifice - vo_111_xalatath_blade_of_the_black_empire_24_f.ogg
+		6178497,
+		-- Resist - vo_111_xalatath_blade_of_the_black_empire_29_f.ogg
+		6178502,
+		-- Overcome This Trial - vo_111_xalatath_blade_of_the_black_empire_31_f.ogg
+		6178504,
+		-- My Power Is Transcendant - vo_111_xalatath_blade_of_the_black_empire_33_f.ogg
+		6178506,
+		-- A Gift of Power - vo_111_xalatath_blade_of_the_black_empire_35_f.ogg
+		6178508,
 	}
 }
