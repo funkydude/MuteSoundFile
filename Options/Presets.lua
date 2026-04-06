@@ -229,7 +229,7 @@ scope.presets = {
 		6178506,
 		-- A Gift of Power - vo_111_xalatath_blade_of_the_black_empire_35_f.ogg
 		6178508,
-	}
+	},
 	lightblindedVanguard = {
 		-- War Chaplain Senn
 		-- https://wago.tools/sounds?page=1&search=war_chaplain_senn
