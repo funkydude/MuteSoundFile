@@ -123,7 +123,7 @@ scope.presets = {
 		567600, -- ChainFoley02
 		567597, -- ChainFoley03
 		567605, -- ChainFoley04
-		567587,	-- ChainFoley05
+		567587, -- ChainFoley05
 		567590, -- ChainFoley06
 		567603, -- ChainFoley07
 		567594, -- ChainFoley08
@@ -181,6 +181,55 @@ scope.presets = {
 		7430186, -- vo_120_valeera_sanguinar_41_f.ogg
 		7430189, -- vo_120_valeera_sanguinar_42_f.ogg
 	},
+	xalatath = {
+		-- Xalatath in low M+ keys
+		-- Your survival wasn't necessary - vo_110_xalatath_blade_of_the_black_empire_34_f.ogg
+		5835211,
+		-- I simply wish you'd lasted a little longer - vo_110_xalatath_blade_of_the_black_empire_35_f.ogg
+		5835212,
+		-- Haha #2 - vo_110_xalatath_blade_of_the_black_empire_06_f.ogg
+		5834619,
+		-- Your Ascension - vo_110_xalatath_blade_of_the_black_empire_01_f.ogg
+		5770084,
+		-- Is Complete - vo_110_xalatath_blade_of_the_black_empire_02_f.ogg
+		5770087,
+		-- Always Alone - xalatath_blade_of_the_black_empire/vo_110_xalatath_blade_of_the_black_empire_09_f.ogg
+		5834623,
+		-- And Now You Learn The True Lesson Of The Void - vo_110_xalatath_blade_of_the_black_empire_36_f.ogg
+		5835214,
+		-- So Easily Overlooked - vo_110_xalatath_blade_of_the_black_empire_22_f.ogg
+		5835195,
+		-- Only The Strongest Survive - vo_110_xalatath_blade_of_the_black_empire_37_f.ogg
+		5835215,
+		-- Do You See It? - vo_815_xalatath_blade_of_the_black_empire_19_f.ogg
+		2530811,
+		-- A Stone To Call Forth The Darkness - vo_815_xalatath_blade_of_the_black_empire_43_f.ogg
+		2530835,
+		-- Open Your Mind To The Whispers - vo_815_xalatath_blade_of_the_black_empire_02_f.ogg
+		2530794,
+		-- Embrace Who You Truly Are - vo_110_xalatath_blade_of_the_black_empire_17_f.ogg
+		5834632,
+		-- The Void Consumes Everything - vo_110_xalatath_blade_of_the_black_empire_42_f.ogg
+		5835726,
+		-- Inevitably, - vo_110_xalatath_blade_of_the_black_empire_41_f.ogg
+		5835725,
+		-- Yes, Feed - vo_111_xalatath_blade_of_the_black_empire_25_f.ogg
+		6178498,
+		-- Shred of Control - vo_111_xalatath_blade_of_the_black_empire_27_f.ogg
+		6178500,
+		-- My Emissary Brings You Power - vo_111_xalatath_blade_of_the_black_empire_21_f.ogg
+		6178494,
+		-- A Willing Sacrifice - vo_111_xalatath_blade_of_the_black_empire_24_f.ogg
+		6178497,
+		-- Resist - vo_111_xalatath_blade_of_the_black_empire_29_f.ogg
+		6178502,
+		-- Overcome This Trial - vo_111_xalatath_blade_of_the_black_empire_31_f.ogg
+		6178504,
+		-- My Power Is Transcendant - vo_111_xalatath_blade_of_the_black_empire_33_f.ogg
+		6178506,
+		-- A Gift of Power - vo_111_xalatath_blade_of_the_black_empire_35_f.ogg
+		6178508,
+	}
 	lightblindedVanguard = {
 		-- War Chaplain Senn
 		-- https://wago.tools/sounds?page=1&search=war_chaplain_senn
