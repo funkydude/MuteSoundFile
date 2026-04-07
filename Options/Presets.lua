@@ -229,5 +229,34 @@ scope.presets = {
 		6178506,
 		-- A Gift of Power - vo_111_xalatath_blade_of_the_black_empire_35_f.ogg
 		6178508,
+	},
+	lightblindedVanguard = {
+		-- War Chaplain Senn
+		-- https://wago.tools/sounds?page=1&search=war_chaplain_senn
+		7324345, -- vo_120_war_chaplain_senn_09_f.ogg
+		7324473, -- vo_120_war_chaplain_senn_13_f.ogg
+		7324474, -- vo_120_war_chaplain_senn_14_f.ogg
+		7324482, -- vo_120_war_chaplain_senn_15_f.ogg
+		7324483, -- vo_120_war_chaplain_senn_16_f.ogg
+		7324485, -- vo_120_war_chaplain_senn_17_f.ogg
+		7329705, -- vo_120_war_chaplain_senn_20_f.ogg
+		7329706, -- vo_120_war_chaplain_senn_21_f.ogg
+		-- General Amias Bellamy
+		-- https://wago.tools/sounds?page=1&search=amias_bellamy
+		7324469, -- vo_120_amias_bellamy_11_f.ogg
+		7324471, -- vo_120_amias_bellamy_12_f.ogg
+		7324472, -- vo_120_amias_bellamy_13_f.ogg
+		7324477, -- vo_120_amias_bellamy_14_f.ogg
+		7324484, -- vo_120_amias_bellamy_15_f.ogg
+		-- Commander Venel Lightblood
+		-- https://wago.tools/sounds?page=1&search=commander_venel_lightblood
+		7324340, -- vo_120_commander_venel_lightblood_09_m.ogg
+		7324475, -- vo_120_commander_venel_lightblood_12_m.ogg
+		7324476, -- vo_120_commander_venel_lightblood_13_m.ogg
+		7324478, -- vo_120_commander_venel_lightblood_14_m.ogg
+		7324479, -- vo_120_commander_venel_lightblood_15_m.ogg
+		7324480, -- vo_120_commander_venel_lightblood_16_m.ogg
+		7324481, -- vo_120_commander_venel_lightblood_17_m.ogg
+		7324573, -- vo_120_commander_venel_lightblood_18_m.ogg
 	}
 }
